@@ -1,6 +1,8 @@
 # cg-ai-identity-management
 This CG provides a safe space to assess use cases, modularization (role, scope, outcomes), existing and emerging AI architectures, progress CG and whitepaper recommendations, develop liaisons, and mature other AI community partners as appropriate. 
 
+Progress of this Community Group is [tracked in its Wiki](https://github.com/openid/cg-ai-identity-management/wiki)
+
 For more information:
 
 - [AIIM CG page at OpenID Foundation](https://openid.net/cg/artificial-intelligence-identity-management-community-group/)
