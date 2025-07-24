@@ -27,19 +27,19 @@ The rapid rise of AI agents presents urgent challenges in authentication, author
 
 ### Table of Contents
 
-[1\. Why are agents different this time?](#1.-why-are-agents-different-this-time?)
+1. Why are agents different this time?
 
-[2\. Immediate solutions to current use cases](#2.-immediate-solutions-to-current-use-cases)
+2. Immediate solutions to current use cases
 
-[3\. Future-looking problems for identity and authorization for autonomous agents](#3.-future-looking-problems-for-identity-and-authorization-for-autonomous-agents)
+3. Future-looking problems for identity and authorization for autonomous agents
 
-[4\. Example use cases for robust authorization for AI agents](#4.-example-use-cases-for-robust-authorization-for-ai-agents)
+4. Example use cases for robust authorization for AI agents
 
-[5\. Conclusion](#6.-conclusion)
+5. Conclusion
 
 ---
 
-# 1\. Why are agents different this time? {#1.-why-are-agents-different-this-time?}
+# 1. Why are agents different this time?
 
 *The first step to understanding the unique identity, authentication, and authorization needs of AI agents is defining exactly what they are and why they are different.* 
 
@@ -71,7 +71,7 @@ Near-term development of highly capable autonomous systems will continue to crea
 
 **Section 3 will explore the challenges we anticipate could arise from these advanced AI systems, the role different identity and authentication approaches could play in mitigating risks, and the challenges that may arise for these systems.**
 
-# 2\. Immediate solutions to current use cases {#2.-immediate-solutions-to-current-use-cases}
+# 2. Immediate solutions to current use cases
 
 *As AI agents are rapidly developed and rolled out, careful thought should be put into what identities these agents are assigned or act on behalf of, how they are authenticated, monitored, audited, governed, and what scope and permissions these agents are granted. In general, this section builds upon existing, widely accepted specifications for present-day AI agent implementations.* 
 
@@ -147,7 +147,7 @@ These architectural patterns provide a concrete location to implement the agent-
 A key benefit of these architectural patterns is closing the critical auditability gap that plagues many current AI systems. Today, an API call made by an agent on a user's behalf is often logged indistinguishably from an action taken directly by the user, creating a black hole for accountability and forensics. By implementing true delegated authority, the credential presented to the Policy Enforcement Point contains distinct identifiers for both the human principal and the agent actor. This enables the PEP to generate enriched audit logs that unambiguously record not only who authorized an action, but which specific agent instance performed it. Capturing this rich contextual data is foundational for debugging, meeting compliance requirements, and ultimately building trustworthy autonomous systems where every action can be traced to its origin.
 
 **Agent to agent**  
-MCP is a common paradigm for accessing resources. In some cases, a tool call to a remote MCP server is being used to request an action or response from an external AI agent. A broader example of this is the new A2A protocol \[[A2A](https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/)\], designed to allow agents to engage in structured communication with other agents. Many other similar protocols exist, all with the vision to enable interagent communication and task completion. A2A provides an outline of how authentication should be performed \[[Enterprise ready A2A](https://google-a2a.github.io/A2A/specification/#4-authentication-and-authorization)\], but leaves many questions addressed above unanswered. A2A introduces additional complexities when authorization extends beyond access to another agent into restrictions on the scope of actions or resource use for downstream agents. We will explore this more in Section 2\.
+MCP is a common paradigm for accessing resources. In some cases, a tool call to a remote MCP server is being used to request an action or response from an external AI agent. A broader example of this is the new A2A protocol \[[A2A](https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/)\], designed to allow agents to engage in structured communication with other agents. Many other similar protocols exist, all with the vision to enable interagent communication and task completion. A2A provides an outline of how authentication should be performed \[[Enterprise ready A2A](https://google-a2a.github.io/A2A/specification/#4-authentication-and-authorization)\], but leaves many questions addressed above unanswered. A2A introduces additional complexities when authorization extends beyond access to another agent into restrictions on the scope of actions or resource use for downstream agents. We will explore this more in Section 2.
 
 **Conclusion: Agents and auth work for synchronous agents using multiple tools across a single trust domain.** 
 
@@ -165,7 +165,7 @@ Several general-purpose best practices emerge from the convergence of AI agents,
 * **Maintain clear audit trails for governance** \- Log all authentication events, authorization decisions, and agent actions. This enables meeting future compliance requirements, discourages malicious agent actions, and facilitates forensic detection of fraud.  
 * **Design for interoperability** \- Build adaptable identity systems that can evolve with emerging standards like IPSIE and future MCP specifications.
 
-# 3\. Future-looking problems for identity and authorization for autonomous agents  {#3.-future-looking-problems-for-identity-and-authorization-for-autonomous-agents}
+# 3. Future-looking problems for identity and authorization for autonomous agents
 
 *While the solutions in Section 2 address current needs, the trajectory of AI development points toward agents operating at a far greater scale and with higher degrees of autonomy. This leap forward introduces a new class of complex, future-looking challenges for identity and access management. These problems move beyond simple client-server authentication and demand a fundamental rethinking of identity, delegation, consent, and governance in a world populated by millions of non-human actors.*
 
@@ -242,7 +242,7 @@ Finally, the proliferation of agents exacerbates the age-old problem of detectin
 
 Finally, building a scalable agent ecosystem requires addressing the full operational picture. An agent’s identity is not static; it requires robust **lifecycle management**—from secure creation and registration, through permission updates, to eventual, verifiable decommissioning. This managed identity becomes the anchor for **discoverability**, enabling agents to find and interact with trusted services through secure, authenticated registries rather than operating in an unvetted wilderness. This entire identity-aware infrastructure, in turn, can serve as a critical **policy enforcement point**. The authorization layer becomes the ideal place to implement systemic guardrails, enforcing not just access control but also regulatory constraints, safety protocols, and responsible AI principles. Crucially, for this ecosystem to thrive, it must not become a walled garden. It must be designed for **interoperability**, capable of bridging with other identity paradigms, such as those based on Decentralized Identifiers (DIDs), ensuring that agents built on OpenID standards can securely interact and transact across the broader, heterogeneous web.
 
-# 4\. Example use cases for robust authorization for AI agents {#4.-example-use-cases-for-robust-authorization-for-ai-agents}
+# 4. Example use cases for robust authorization for AI agents
 
 *To make the future challenges of agent identity and access management concrete, this section outlines five scenarios ordered by increasing complexity. Each case illustrates a distinct failure mode of traditional Identity and Access Management (IAM) frameworks when confronted with the unique operational characteristics of AI agents, demonstrating the need for new, agent-centric solutions.*
 
@@ -270,10 +270,10 @@ The ultimate challenge for IAM lies in governing autonomous agents whose actions
 
 OAuth was designed to enable workloads to access protected resources on behalf of one human using a subset of that human’s permissions. Agents are increasingly being used as part of a team, and the output of an agent may be written into a codebase or chat channel to which multiple users have access. If the agent is only acting on behalf of only one user, it may gather context via MCP or A2A, which other users do not have access to, and it may include that information in its output. For example, you could imagine a CFO having an agent answer questions in a chat channel. While the CFO may have access to salary data, not every member of the channel does. As a result, the agent may disclose confidential salaries because it can act under the CFO’s permissions. It lacks a standardized method for respecting the subset of permissions that overlap for all users in the channel. ABAC and fine-grained authorization can work to address this, but complexity and challenges appear in any implementation. 
 
-5\. Glossary
+# 5. Glossary
 
 To bridge the gap between identity access management professionals and AI agent developers, we outline some common terms across these fields.
 
-# 6\. Conclusion {#6.-conclusion}
+# 6. Conclusion
 
 The path from today's human-centric authentication to tomorrow's agent-native identity systems requires careful orchestration. Organizations cannot simply deprecate existing OAuth flows or mandate new agent credentials overnight. Instead, the transition likely involves hybrid approaches: agents initially piggybacking on user sessions with explicit delegation tokens, gradually moving toward native agent identities as standards mature and regulatory frameworks adapt. Early adopters in payments and commerce are already demonstrating this evolution, using verifiable credentials for high-value transactions while maintaining traditional authentication for routine operations.
