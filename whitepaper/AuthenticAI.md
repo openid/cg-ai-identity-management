@@ -2,26 +2,31 @@
 
 ### Project Blurb
 
-The rapid rise of AI agents presents urgent challenges in authentication, authorization, and identity management. Current agent-centric protocols (like MCP or A2A) highlight the demand for clarified best practices in authentication and authorization. Looking ahead, ambitions for highly autonomous agents raise complex long-term questions regarding scalable access control, agent-centric identities, AI workload differentiation, and delegated authority. This whitepaper is crafted for developers working at the intersection of AI agents and access management, offering both resources already available for securing today's agents and a strategic agenda to address the foundational authentication, authorization, and identity problems pivotal for tomorrow's widespread autonomous systems.
+The rapid rise of Agentic AI presents urgent challenges in authentication, authorization, and identity management. Current agent-centric protocols (like MCP or A2A) highlight the demand for clarified best practices in authentication, authorization, and accounting. Looking ahead, ambitions for highly autonomous agents raise complex long-term questions regarding scalable access control, agent-centric identities, AI workload differentiation, delegated authority, and accountability. This whitepaper is crafted for those who are working at the intersection of Agentic AI and access management, offering both resources already available for securing today's agents and a strategic agenda to address the foundational authentication, authorization, accountability, and identity problems pivotal for tomorrow's widespread autonomous systems.
 
 ### Executive Summary
 
 **Today's Frameworks Handle Simple AI Agent Scenarios:**
 
-* *AI agents differ fundamentally from traditional software workloads;* they take autonomous actions on external services with non-deterministic, flexible behavior.  
-* *Current OAuth 2.1 and OpenID Connect frameworks with agents work well within single trust domains* with synchronous agent operations (e.g., enterprise agents accessing internal tools, consumers accessing their services through AI tools), but break down in scenarios which are cross-domain, highly autonomous, or asynchronous, as well as those which require the agent to use or enforce delegated permissions on behalf of multiple human users.  
-* The *Model Context Protocol (MCP) is leading in adoption* as the key framework for connecting agents to external resources. Other approaches, including traditional function calling and agent-to-agent communication protocols, exist and should be supported.   
-* Separation of concerns architecture, where *resource servers delegate to dedicated authorization servers rather than implementing custom approaches*, is recommended. Enterprise SSO and SCIM provisioning can enable centralized agent lifecycle management and governance of permissions and access for many AI agent use cases.
+* *Agentic AI fundamentally differs from traditional software;* it makes independent decisions, takes autonomous actions on external services, and adapts behavior in real-time, rather than simply executing predetermined instructions.  
+* The *Model Context Protocol (MCP) is leading in adoption* as the key framework for connecting LLMs  agents to external data sources and tools when building agents. Other approaches, including traditional function calling and agent-to-agent communication protocols, exist and should be supported.
+* We're not starting from zero. Many existing Identity and Access Management concepts and standards can be applied to secure AI agent interactions with other systems.
+* Separation of concerns architecture, where *resource servers delegate to dedicated authorization servers rather than implementing custom approaches*, is recommended.
+* Enterprise SSO and SCIM provisioning can enable centralized agent lifecycle management and governance of permissions and access for many AI agent use cases.
+* *Existing OAuth 2.1 and OpenID Connect frameworks, when used with agents, work well within single trust domains* where agent operations are synchronous. (e.g., enterprise agents accessing internal tools, consumers accessing their services through AI tools), but may fall short in scenarios which are cross-domain, highly autonomous, or asynchronous, as well as those which require the agent to use or enforce delegated permissions on behalf of multiple human users.
+
 
 **Critical Future Challenges Exist:**
 
 * *Agent identity fragmentation should be avoided.* Vendors could potentially develop proprietary agentic identity systems, which would reduce developer velocity by forcing repeated one-off integrations and compromise security by creating multiple security models, each with different risks and vulnerabilities.  
-* *Agent impersonation should be replaced by delegated authority.* Currently, agents often act indistinguishably from users, creating accountability gaps and security risks. True delegation requires explicit on-behalf-of flows where agents prove their delegated scope while remaining identifiable as distinct from the user they represent.  
+* *Agent impersonation should be replaced by delegated authority.* Developers tend to use borrowed API keys, service accounts, or embedded user credentials within agents. This practice often leads to agents acting indistinguishably from users, which creates accountability gaps and security risks. True delegation necessitates explicit "on-behalf-of" flows, where agents can prove their delegated scope while still being identifiable as distinct from the users they represent.
 * *Scalability problems exist in human oversight & user consent.* Users face thousands of authorization requests as agents proliferate, creating security risks from reflexive approval. Preemptive authorization and scoping of flexible agents are at odds with least privilege.  
-* *Recursive delegation creates risks.* Agents spawning sub-agents or communication tasks to other agents create complex authorization chains without clear scope attenuation mechanisms.  
-* *Agents acting on behalf of and reporting to teams of humans lack support.* OAuth and OpenID Connect were designed to work on behalf of one user, but agents are used in shared code bases and chat channels which have multiple users with varying levels of permissions.  
+* *Recursive delegation creates risks.* Agents spawning sub-agents or communicating tasks to other agents create complex authorization chains without clear scope attenuation mechanisms.  
+* *Agents acting on behalf of and reporting to teams of humans lack support.* While OAuth and OpenID Connect were designed for individual user authorization, agents can be employed in shared codebases or chat channels. In these multi-user environments, various permission levels may exist for different users, but all of them share a common objective within a single context.
 * *Trustworthy autonomy lacks automated verification.* Scaling beyond human-in-the-loop safety models requires new, programmatic methods to ensure an agent’s actions continuously align with its operational goals and constraints.  
-* *Browser and computer-use agents break the current authorization paradigm.* Agents controlling visual interfaces directly (or via MCP into browser orchestrors) bypass all traditional API-based authorization controls. Protecting the open web from lockdown will be hard without robust agent identification. 
+* *Browser and computer-use agents break the current authorization paradigm.* Agents controlling visual interfaces directly (or via MCP into browser orchestrators) bypass all traditional API-based authorization controls. Protecting the open web from lockdown will be hard without robust agent identification.
+* *Multi-facet behaviour of agents complicates their identity.* Technological advancements allow agents to act on-its-own requiring agents to have their own credentials, permissions, and audit trails. Furthermore, an agent's nature can be hybrid, enabling it to alternate between independent execution and acting on behalf of a user.
+
 
 ### 
 
