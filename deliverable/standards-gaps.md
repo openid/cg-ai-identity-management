@@ -19,3 +19,7 @@
 ## Tech: Enterprise Auth JAG, DCR → Client ID Metadata
 
 ## Scalable Governance
+
+##Ownership and claim modeling 
+
+## Permission overlap and lateral movement 
