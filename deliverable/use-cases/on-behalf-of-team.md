@@ -13,3 +13,6 @@ AI agents can use tools to respond to prompts in a team context without disclosi
 **For example,**
 
 A CEO is meeting with his leadership team. He has access to salary data, but they do not. The team asks the AI a variety of financial questions, and it responds only with information that every member of the team has access to.
+
+
+They will not have access to the raw data but the Knowledge dereived  
