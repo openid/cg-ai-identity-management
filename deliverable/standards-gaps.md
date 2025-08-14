@@ -4,7 +4,7 @@
 
 ## Delegated Authority and Authorization
 
-## Data Sharing
+## Data Sharing and authorization 
 
 ## Ecosystem Interoperability
 
