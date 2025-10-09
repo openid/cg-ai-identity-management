@@ -9,7 +9,8 @@ The rapid rise of AI agents presents urgent challenges in authentication, author
 **Today's Frameworks Handle Simple AI Agent Scenarios:**
 
 * *AI agents differ fundamentally from traditional software workloads;* they take autonomous actions on external services with non-deterministic, flexible behavior.  
-* *Current OAuth 2.1 and OpenID Connect frameworks with agents work well within single trust domains* with synchronous agent operations (e.g., enterprise agents accessing internal tools, consumers accessing their services through AI tools), but break down in scenarios which are cross-domain, highly autonomous, or asynchronous, as well as those which require the agent to use or enforce delegated permissions on behalf of multiple human users.  
+* *Current OAuth 2.1 and OpenID Connect frameworks with agents work well within single trust domains* with synchronous agent operations (e.g., enterprise agents accessing internal tools, consumers accessing their services through AI tools), but break down in scenarios which are cross-domain, highly autonomous, or asynchronous, as well as those which require the agent to use or enforce delegated permissions on behalf of multiple human users.
+* Service-to-service workloads (microservices, machine identities)  already need automation, but without reasoning or autonomy.  
 * The *Model Context Protocol (MCP) is leading in adoption* as the key framework for connecting agents to external resources. Other approaches, including traditional function calling and agent-to-agent communication protocols, exist and should be supported.   
 * Separation of concerns architecture, where *resource servers delegate to dedicated authorization servers rather than implementing custom approaches*, is recommended. Enterprise SSO and SCIM provisioning can enable centralized agent lifecycle management and governance of permissions and access for many AI agent use cases.
 
@@ -21,7 +22,12 @@ The rapid rise of AI agents presents urgent challenges in authentication, author
 * *Recursive delegation creates risks.* Agents spawning sub-agents or communication tasks to other agents create complex authorization chains without clear scope attenuation mechanisms.  
 * *Agents acting on behalf of and reporting to teams of humans lack support.* OAuth and OpenID Connect were designed to work on behalf of one user, but agents are used in shared code bases and chat channels which have multiple users with varying levels of permissions.  
 * *Trustworthy autonomy lacks automated verification.* Scaling beyond human-in-the-loop safety models requires new, programmatic methods to ensure an agent’s actions continuously align with its operational goals and constraints.  
-* *Browser and computer-use agents break the current authorization paradigm.* Agents controlling visual interfaces directly (or via MCP into browser orchestrors) bypass all traditional API-based authorization controls. Protecting the open web from lockdown will be hard without robust agent identification. 
+* *Browser and computer-use agents break the current authorization paradigm.* Agents controlling visual interfaces directly (or via MCP into browser orchestrors) bypass all traditional API-based authorization controls. Protecting the open web from lockdown will be hard without robust agent identification.
+* Agents introduce new attack surfaces beyond just identity.
+* Emergent behavior where even the developer cannot predict the action plan.
+* For agents, lifecycle is dynamic: they may be spawned, forked, or retired automatically.
+* How do we provision, rotate, and revoke identities for ephemeral or cascading agents?
+* 
 
 ### 
 
@@ -63,7 +69,7 @@ The highly flexible, non-deterministic, and externally resource-connected nature
 
 **Who is this whitepaper for?**
 
-This white paper is intended for stakeholders involved in the ongoing near-term discussions surrounding authorization for key new technologies in the AI ecosystem, such as MCP, A2A, and emerging new frameworks. Especially the AI implementers on the leading edge of delivering AI products at scale, and the standards experts tenured at managing risks inherent in multi-domain identity and security architectures. It seeks to lay out the current state of public discussions regarding these protocols and highlight critical considerations needed for the next generation of development on these. 
+This white paper is intended for stakeholders involved in the ongoing near-term discussions surrounding authorization for key new technologies in the AI ecosystem, such as MCP, A2A, AP2 and emerging new frameworks. Especially the AI implementers and governance team on the leading edge of delivering AI products at scale, and the standards experts tenured at managing risks inherent in multi-domain identity and security architectures. It seeks to lay out the current state of public discussions regarding these protocols and highlight critical considerations needed for the next generation of development on these. 
 
 **Section 2 of this report summarizes the current state of discussions and points towards relevant resources for further examination.**
 
