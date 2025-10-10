@@ -27,3 +27,4 @@ This report will likely be posted twice: once on the OpenID Foundation website, 
 * Alex Pentland
 * Atul
 * Jeff
+* Vaibhav Narula
