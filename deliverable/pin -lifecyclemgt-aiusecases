@@ -1,0 +1,11 @@
+Authentication factor lifecycle management
+Use case 1 - User logs in online, registers a PIN, and credentials are cached locally and optionally synced across other apps integrated with the IDP. 
+Use case 2 - PINs expire based on policy; users are prompted to rotate PINs during online login.
+Use case 3 - Admins revoke PINs remotely; deactivated users lose access even if previously logged in
+Use case 4 - Administration of PIN usage for audit along with lockout&  retry settings should be availble in Authentication solution
+Use case 5 - Users reset PINs when apps come back online; old PINs are flushed and replaced.
+Use case 6 - If IDP is offline and, fallback  to PIN is enabled.
+Use case 7 - Additional Governance Features - 
+Admins must be able to configure PIN policies (expiration, complexity, history, lockout thresholds) via a settings file or UI.
+The app must support audit reporting for PIN lifecycle events (creation, change, expiration, revocation, usage).
+The app must notify users of upcoming PIN expiration (e.g., 5 days before expiry) during online login.
