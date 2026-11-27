@@ -675,7 +675,6 @@ These are independent dimensions. A payment may be within scope but financially 
 | 16 | Independent implementations evaluate identical evidence under identical pinned rules consistently. | AMEP conformance |
 | 17 | Replayed or superseded event does not improperly reopen a resolved attempt. | SSF + durable state |
 | 18 | Sufficient verified context provenance permits detection of an unauthorized effect associated with altered context. | CIGAR + TRACE + AAC + AMEP |
-
 | 19 | Previously unrelated consumer and merchant complete a permitted purchase using accepted credential or AAuth/OAuth proofs without bilateral workload federation. | OpenID4VC + AAuth/OAuth + AP2 |
 | 20 | A valid credential presented by an unauthorized request signer, or a credential from an untrusted issuer, does not satisfy admission. | VC verification + request binding |
 | 21 | Credential status change triggers scoped reevaluation, without treating credential validity as mandate validity. | Status + SSF + AuthZEN |
