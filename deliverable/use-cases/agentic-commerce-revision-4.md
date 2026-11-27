@@ -463,7 +463,7 @@ sequenceDiagram
   A->>D: Discover resource and trust references
   D-->>A: Descriptor and manifest
   A->>T: Verify merchant credentials and admission pack
-  Note over A,T: OpenID4VP or verified assertions; no bilateral workload federation
+  Note over A,T: OpenID4VP or verified assertions, no bilateral workload federation
   T-->>A: Scoped verified claims
   A->>P: Request admission with scoped AAuth or OAuth proof
   P->>Z: Evaluate resource and claims
